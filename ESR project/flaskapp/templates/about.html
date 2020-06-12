@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>About Project</h1>
+<div class="card" <p>Emotion expression is an essential part of human interaction. The same text can hold different
+    meanings when
+    expressed with different emotions. Thus understanding the text alone is not enough for getting the meaning of an
+    utterance. Acted and natural corpora have been used to detect emotions from speech. Many speech databases for
+    different languages including English, German, Chinese, Japanese, Russian, Italian, Swedish and Spanish exist for
+    modeling emotion recognition. Since there is no reported reference of an available Arabic corpus, we decided to
+    collect the first Arabic modeling emotion recognition. <span><a
+            href="https://www.kaggle.com/suso172/arabic-natural-audio-dataset">reference</a></span> </p>
+</div>
+<h1>About
+    Developers </h1>
+<div class="row">
+    <div class="card column left" style="width:350px;margin-left: 20px;">
+        <img class="card-img-top" src="{{url_for('static',filename='photos/pp.jpg')}}" alt="Card image"
+            style="width:100%">
+        <div class="card-body">
+            <h4 class="card-title">Sohayeb Wael</h4>
+            <p class="card-text">Data Scientist who love solve business problems and learn new technologies.
+            </p>
+            <a href="https://www.linkedin.com/in/sohaib-wael-380036175" class="btn btn-primary stretched-link">See Profile</a>
+        </div>
+    </div>
+
+    <div class="card column left" style="width:350px;margin-left: 20px;">
+        <img class="card-img-top" src="{{url_for('static',filename='photos/pp (3).jpg')}}" alt="Card image"
+            style="width:100%">
+        <div class="card-body">
+            <h4 class="card-title">Ahmed Adel</h4>
+            <p class="card-text">Software Engineering student at Cairo University,who interested in data science and ML.
+            </p>
+            <a href="https://www.linkedin.com/in/ahmed-adel-045b0910b/" class="btn btn-primary stretched-link">See Profile</a>
+        </div>
+    </div>
+
+    <div class="card column left" style="width:350px;margin-left: 20px;">
+        <img class="card-img-top" src="{{url_for('static',filename='photos/pp (2).jpg')}}" alt="Card image"
+            style="width:100%">
+        <div class="card-body">
+            <h4 class="card-title">Mustafa Ryad</h4>
+            <p class="card-text">Python Developer who love do things with ML and solve programming problems.
+            </p>
+            <a href="https://www.linkedin.com/in/mustafa-ryad-2a7756137/" class="btn btn-primary stretched-link">See
+                Profile</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

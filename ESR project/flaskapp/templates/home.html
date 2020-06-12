@@ -1,0 +1,32 @@
+{% extends 'base.html'  %}
+{% block body %}
+<h1><b>Last 5 predictions </b></h1>
+<table>
+    <tr>
+        {% for col in column_names %}
+        <th>{{col}}</th>
+        {% endfor %}
+    </tr>
+    
+    {% for row in row_data %}
+    <tr>
+        {% for col, row_ in zip(column_names, row) %}
+        {% if col == link_column %}
+        <td>
+            <p style="font-size:30px">{{row_|safe}}</p>
+        </td>
+        {% else %}
+        <td>{{row_}}</td>
+        {% endif %}
+        {% endfor %}
+    </tr>
+    {% endfor %}
+
+</table>
+<div class="chart" id="bargraph">
+    <script>
+        var graphs = {{ plot | safe}};
+        Plotly.plot('bargraph', graphs, {});
+    </script>
+</div>
+{% endblock %}

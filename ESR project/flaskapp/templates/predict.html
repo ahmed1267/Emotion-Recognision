@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="col-md-6 offset-md-3 mt-5">
+	<br>
+	<h1>Predicted Emotion</h1>
+	<p>
+		<!-- # v4-4(2) angry  -->
+		<!-- v2- suprise -->
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		<ul class=flashes>
+			{% for message in messages %}
+			{% if message=='happy' %}
+			<p style="font-size:100px">&#128513;</p>
+			{% elif message=='angry' %}
+			<p style="font-size:100px">&#128544;</p>
+			{% else %}
+			<p style="font-size:100px">&#128550;</p>
+			{% endif %}
+			<li><h1>{{ message }}</h1></li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+		{% endwith %}
+	</p>
+	
+	<form method="post" action="{{url_for('upload_file')}}" enctype="multipart/form-data">
+		<div class="form-group">
+			<label for="exampleInputName">Full Name</label>
+			<input type="text" name="fullname" class="form-control" id="exampleInputName"
+				placeholder="Enter your name and surname" required="required">
+		</div>
+		<hr>
+		<div class="form-group mt-3">
+			<dl>
+				<p>
+					<input type="file" name="file" autocomplete="off" required>
+				</p>
+			</dl>
+			<p>
+				<input type="submit" value="Perdict">
+			</p>
+		</div>
+		<hr>
+	</form>
+</div>
+{% endblock %}
